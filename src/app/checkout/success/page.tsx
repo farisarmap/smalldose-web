@@ -54,7 +54,11 @@ export default async function CheckoutSuccessPage({
             {lineItems.map((item) => {
               const product = item.price?.product;
               const productName =
-                typeof product === "string" ? item.description || "Coffee" : product.name;
+                typeof product === "string"
+                  ? item.description || "Coffee"
+                  : product && "name" in product
+                    ? product.name
+                    : item.description || "Coffee";
               const unitAmount = item.price?.unit_amount ?? 0;
               const quantity = item.quantity ?? 1;
               return (
