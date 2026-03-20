@@ -10,9 +10,8 @@ export function getStripe(): Stripe {
     throw new Error("STRIPE_SECRET_KEY is not set. Add it to your .env.local file.");
   }
 
-  stripeClient = new Stripe(secretKey, {
-    apiVersion: "2025-08-27.basil",
-  });
+  // Use Stripe SDK default pinned API version to avoid TS literal mismatch.
+  stripeClient = new Stripe(secretKey);
 
   return stripeClient;
 }
