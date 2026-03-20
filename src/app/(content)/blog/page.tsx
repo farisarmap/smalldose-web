@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import { BlogListingClient } from "@/components/BlogListingClient";
 import { Footer } from "@/components/Footer";
@@ -26,7 +27,17 @@ export default function BlogPage() {
             </p>
           </div>
         </section>
-        <BlogListingClient articles={articles} />
+        <Suspense
+          fallback={
+            <section className="bg-[#faf6ee] py-16">
+              <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="h-24 animate-pulse rounded-2xl bg-white/70" />
+              </div>
+            </section>
+          }
+        >
+          <BlogListingClient articles={articles} />
+        </Suspense>
       </main>
       <Footer />
     </div>
