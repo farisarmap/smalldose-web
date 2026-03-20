@@ -1,0 +1,64 @@
+# Project: Smalldose — Coffee E-commerce
+# Stack: Next.js 14 App Router, TypeScript, Tailwind CSS, Zustand, Stripe
+
+## Brand
+- Name: Smalldose
+- Tagline: Your daily caffein doses
+- Market: Indonesia-first brand (Bahasa/English-ready)
+- Aesthetic: dark tech-precision, orbital/scientific motif, specialty coffee for the analytical mind
+- Mood: SpaceX meets third-wave coffee roaster — NOT rustic, NOT artisanal, NOT warm
+
+## Design Reference
+Reference site: https://archerscoffee.com (layout/structure reference ONLY)
+Override their warm palette entirely with Smalldose dark-tech aesthetic
+
+## Brand Tokens (CSS variables in globals.css)
+--color-midnight:  #0A0D12   ← page background (darkest)
+--color-navy:      #0D1B2E   ← card/surface background
+--color-steel:     #1A3A5C   ← borders, dividers
+--color-orbital:   #1E6FAD   ← primary blue (logo mid tone)
+--color-spark:     #5BB8F5   ← accent light blue (logo highlight)
+--color-ion:       #A8D8F0   ← hover tints, subtle fills
+--color-white:     #F0F6FF   ← primary text (blue-tinted white)
+--color-muted:     #7A9BB5   ← secondary text
+--color-ghost:     #2A3D52   ← subtle dividers
+
+## Typography
+- Display/headings: Rajdhani (bold, condensed — matches logo wordmark energy)
+- Body: Inter
+- NO serif fonts — this brand is technical and precise, not rustic
+- Import both from Google Fonts in app/layout.tsx
+
+## Aesthetic Rules
+- Dark backgrounds ALWAYS — this is a dark-only brand, no light mode
+- Blue glow on interactive elements: box-shadow 0 0 24px rgba(91,184,245,0.25)
+- Orbital/circular SVG motifs in decorative sections (echoes logo swirl)
+- Product cards: #0D1B2E surface, #1A3A5C border, spark blue glow on hover
+- Hero: #0A0D12 background with animated orbital rings or particle effect
+- Buttons: filled #1E6FAD primary / ghost with #5BB8F5 border secondary
+- Photography: high contrast, dark moody, studio-lit coffee on dark surfaces
+- NO warm tones — no browns, creams, golds, or any earthy color
+- NO serif fonts anywhere
+
+## Code Rules
+- Always use TypeScript with strict types, no 'any'
+- Use Next.js 14 App Router only (no pages/ directory)
+- Tailwind CSS only for styling — use brand color names from tailwind.config.ts
+- Components go in /components, reusable UI primitives in /components/ui
+- Use next/image for ALL images with proper width/height/alt
+- Mobile-first responsive on every component
+- Zustand for global state (/store/cartStore.ts and /store/uiStore.ts)
+- Server Components by default, "use client" only when interactivity is needed
+- Route groups: (shop), (checkout), (content), (auth)
+- Pricing defaults to IDR (Rupiah) and must support switch to USD
+- Keep product numeric `price` in IDR and format through shared currency utilities
+- Currency preference should be global state (Zustand), accessible across Navbar/cards/cart/checkout
+
+## Response Rules
+- Never write placeholder TODO comments — always write real, working code
+- Always include proper TypeScript interfaces, import from /types/index.ts
+- Always add aria-label, aria-expanded, role where needed (accessibility)
+- When building a page, build the complete page — not a skeleton
+- Always handle loading states (use Skeleton components)
+- Always handle empty states (e.g. empty cart, no results)
+- After generating a file, list what needs to be built next

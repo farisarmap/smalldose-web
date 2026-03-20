@@ -1,0 +1,53 @@
+@keyframes about-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.about-orbital-spin {
+  animation-name: about-orbit-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes about-scroll-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.about-scroll-indicator > div:last-child {
+  animation: about-scroll-pulse 2s ease-in-out infinite;
+}
+
+.about-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+}
+
+.about-reveal.about-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-parallax-bg {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 1023px) {
+  .about-parallax-bg {
+    background-attachment: scroll;
+  }
+}

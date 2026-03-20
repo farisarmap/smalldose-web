@@ -1,0 +1,71 @@
+:root {
+  --color-espresso: #1c0f0a;
+  --color-roast: #3b1e0e;
+  --color-caramel: #b07040;
+  --color-cream: #f5edd8;
+  --color-steam: #faf6ee;
+  --color-gold: #c9973a;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--transition-smooth),
+    transform var(--transition-smooth);
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-0 {
+  transition-delay: 0ms;
+}
+.stagger-1 {
+  transition-delay: 80ms;
+}
+.stagger-2 {
+  transition-delay: 160ms;
+}
+.stagger-3 {
+  transition-delay: 240ms;
+}
+.stagger-4 {
+  transition-delay: 320ms;
+}
+.stagger-5 {
+  transition-delay: 400ms;
+}
+
+.stagger-120-0 {
+  transition-delay: 0ms;
+}
+.stagger-120-1 {
+  transition-delay: 120ms;
+}
+.stagger-120-2 {
+  transition-delay: 240ms;
+}
+.stagger-120-3 {
+  transition-delay: 360ms;
+}
+.stagger-120-4 {
+  transition-delay: 480ms;
+}
+.stagger-120-5 {
+  transition-delay: 600ms;
+}
+.stagger-120-6 {
+  transition-delay: 720ms;
+}
+.stagger-120-7 {
+  transition-delay: 840ms;
+}
+.stagger-120-8 {
+  transition-delay: 960ms;
+}
